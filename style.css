@@ -81,12 +81,13 @@ footer {
 }
 
 .carousel {
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: both mandatory;
+    scroll-snap-stop: always;
     scroll-behavior: smooth;
     width: 100%;
     height: auto;
     flex-flow: row nowrap;
-    overflow-y: hidden;
+    overflow: scroll;
     display: flex;
     scrollbar-width: none;
 }
