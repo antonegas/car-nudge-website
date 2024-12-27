@@ -1,11 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="images/car-sticker.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Car-Nudge</title>
 </head>
 <body>
-    
+    <script>
+        const COLORS = ["blue", "green", "grey", "orange", "pink", "red", "white", "yellow"];
+        const NUMBER_OF_LEVELS = 15;
+    </script>
+    <div class="wrapper">
+        <header>
+            <img loading="lazy" src="images/car-nudge-number-plate.webp" alt="Car-Nudge numberplate">
+        </header>
+        <main>
+            <section>
+                <figure>
+                    <iframe 
+                        class="yt" 
+                        src="https://www.youtube.com/embed/QBA9oGluzCY?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playlist=QBA9oGluzCY"
+                        title="YouTube video player" 
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </figure>
+                <p><span>Car-Nudge is a party game</span> <span>with cars</span></p>
+            </section>
+            <section>
+                <figure class="carousel-container">
+                    <section class="carousel">
+                        <script>
+                            for (let index = 0; index < NUMBER_OF_LEVELS; index++) {
+                                document.write(`
+                                <figure class="carousel-image" id="level-${index}">
+                                    <img loading="lazy" src="images/levels/${index}.webp" alt="">
+                                </figure>
+                                `);
+                            }
+                        </script>
+                    </section>
+                </figure>
+                <section class="carousel-selector-container">
+                    <script>
+                        for (let index = 0; index < NUMBER_OF_LEVELS; index++) {
+                            document.write(`
+                            <a href="#level-${index}">
+                                <figure class="carousel-selector">
+                                    <img loading="lazy" src="images/levels/${index}.webp" alt="">
+                                </figure>
+                            </a>
+                            `);
+                        }
+                    </script>
+                </section>
+                <p><span>Play over 14</span> <span>high-octane levels</span></p>
+            </section>
+            <section>
+                <figure>
+                    <img loading="lazy" src="images/lobby.webp" alt="">
+                </figure>
+                <p><span>Locally or online</span> <span>with up to 8 players</span></p>
+            </section>
+            <section>
+                <figure id="model-preview">
+          
+          <script type="text/javascript">
+                        let modelColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+                        document.write(`
+                                    <model-viewer
+                                        alt="Car"
+                                        src="car-models/${modelColor}-car/car.glb"
+                                        poster="car-models/${modelColor}-car/poster.webp"
+                                        poster=""
+                                        auto-rotate
+                                        camera-controls
+                                        tone-mapping="neutral"
+                                        shadow-intensity="1"
+                                        shadow-softness="0"
+                                        interaction-prompt-style="wiggle"
+                                        loading="lazy"
+                                        touch-action="pan-y"
+                                        camera-target="-0.001913m 0.99m -0.01644m"
+                                        camera-orbit="-52.1deg 78.51deg 24.94m"
+                                        field-of-view="30deg"
+                                    />
+                        `);
+                    </script>
+                    <noscript>
+                        <p>model cant be shown</p>
+                    </noscript>
+                </figure>
+                <p><span>Customize your car with one of 8</span> <span>possible configurations</span></p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>
+            <script>
+                let developers = ["Anton", "Jonatan"];
+                developers.sort(() => Math.random() - 0.5);
+
+                document.write(`Developed by <b>${developers[0]}</b> and <b>${developers[1]}</b>`)
+            </script>
+        </p>
+    </footer>
 </body>
+
 </html>

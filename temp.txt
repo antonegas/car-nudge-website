@@ -1,0 +1,1 @@
+<model-viewer src="car.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" shadow-softness="0" camera-target="-0.001913m 0.99m -0.01644m" camera-orbit="-52.1deg 78.51deg 24.94m" field-of-view="30deg"> </model-viewer>
